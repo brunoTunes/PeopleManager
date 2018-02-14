@@ -13,4 +13,9 @@
     <DotNetCliToolReference Include="dotnet-xunit" Version="2.3.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Application Services\ApplicationServices.csproj" />
+    <ProjectReference Include="..\Domain\DomainModel.csproj" />
+  </ItemGroup>
+
 </Project>

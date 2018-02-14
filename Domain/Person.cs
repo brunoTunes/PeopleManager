@@ -12,13 +12,13 @@ namespace Domain
         {
         }
 
-        public void AddVacation(Vacation vacation)
+        public void Add(Vacation vacation)
         {
             if(!Vacations.Any(vacationInList => vacationInList.Overlaps(vacation)))
                 Vacations.Add(vacation);
         }
 
-        public void RemoveVacation(Vacation vacation)
+        public void Remove(Vacation vacation)
         {
             Vacations.Remove(vacation);
         }
