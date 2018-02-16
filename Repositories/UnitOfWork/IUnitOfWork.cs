@@ -1,6 +1,6 @@
 ﻿namespace Repositories.UnitOfWork
 {
-    interface IUnitOfWork
+    public interface IUnitOfWork
     {
         void Commit();
         void Rollback();

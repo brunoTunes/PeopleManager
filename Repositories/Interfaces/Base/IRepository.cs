@@ -2,9 +2,10 @@
 
 namespace Repositories.Interfaces.Base
 {
-    interface IRepository<T>
+    public interface IRepository<T>
     {
         IEnumerable<T> GetAll();
-        T GetById();
+        T GetById(int Id);
+        void Save(T entity);
     }
 }

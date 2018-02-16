@@ -20,7 +20,7 @@ namespace Domain.Test
             var person = new Person();
             var vacation = new Vacation(DateTime.UtcNow.AddDays(1), DateTime.UtcNow.AddDays(2));
 
-            person.AddVacation(vacation);
+            person.Add(vacation);
 
             person.Vacations.Should().HaveCount(1);
             person.Vacations.Should().Contain(vacation);
@@ -33,8 +33,8 @@ namespace Domain.Test
             var vacation1 = new Vacation(DateTime.UtcNow.AddDays(1), DateTime.UtcNow.AddDays(2));
             var vacation2 = new Vacation(DateTime.UtcNow.AddDays(1), DateTime.UtcNow.AddDays(3));
 
-            person.AddVacation(vacation1);
-            person.AddVacation(vacation2);
+            person.Add(vacation1);
+            person.Add(vacation2);
 
             person.Vacations.Should().HaveCount(1);
             person.Vacations.Should().Contain(vacation1);
@@ -46,8 +46,8 @@ namespace Domain.Test
             var person = new Person();
             var vacation = new Vacation(DateTime.UtcNow.AddDays(1), DateTime.UtcNow.AddDays(2));
 
-            person.AddVacation(vacation);
-            person.RemoveVacation(vacation);
+            person.Add(vacation);
+            person.Remove(vacation);
 
             person.Vacations.Should().BeEmpty();
         }

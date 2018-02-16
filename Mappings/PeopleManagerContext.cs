@@ -1,4 +1,4 @@
-﻿using System;
+﻿using Mappings.Configurations;
 using System.Data.Entity;
 
 namespace Mappings
@@ -11,7 +11,7 @@ namespace Mappings
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Configurations.Add(new PeopleEntityConfiguration());
+            modelBuilder.Configurations.Add(new PeopleConfiguration());
         }
     }
 }

@@ -1,17 +1,19 @@
-﻿using System.Data;
+﻿using Repositories.Interfaces;
+using System.Data;
 using System.Data.Entity;
+using Mappings;
 
 namespace Repositories.UnitOfWork
 {
-    public class EFUnitOfWork : IUnitOfWork
+    public class EFUnitOfWork : IEFUnitOfWork
     {
         private DbContext context;
         private DbContextTransaction transaction;
-        public DbContext Context { get { return context; } }
 
         public EFUnitOfWork()
         {
-            //TODO Create Context and use it here -> context = dbContext;
+            //TODO Better Context Managing -> http://mehdi.me/ambient-dbcontext-in-ef6/
+            context = new PeopleManagerContext();
         }
 
         public void OpenTransaction(IsolationLevel isolationLevel = IsolationLevel.ReadCommitted)
@@ -58,6 +60,11 @@ namespace Repositories.UnitOfWork
                 context.Dispose();
                 context = null;
             }
+        }
+
+        public DbContext GetContext()
+        {
+            return context;
         }
     }
 }

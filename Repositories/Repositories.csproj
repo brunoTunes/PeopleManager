@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Domain\DomainModel.csproj" />
+    <ProjectReference Include="..\Mappings\Mappings.csproj" />
   </ItemGroup>
 
 </Project>
