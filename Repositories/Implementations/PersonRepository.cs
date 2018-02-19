@@ -15,10 +15,10 @@ namespace Repositories.Implementations
             _unitOfWork = unitOfWork;
         }
 
-        public IEnumerable<Person> GetAll()
+        public IQueryable<Person> GetAll()
         {
             _unitOfWork.OpenTransaction();
-            return _unitOfWork.GetContext().Set<Person>().ToList();
+            return _unitOfWork.GetContext().Set<Person>().AsQueryable();
         }
 
         public Person GetById(int Id)
