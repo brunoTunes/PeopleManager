@@ -8,7 +8,7 @@
         {
             var compareTo = obj as Entity;
 
-            if (ReferenceEquals(compareTo, null))
+            if (compareTo is null)
                 return false;
 
             if (ReferenceEquals(this, compareTo))
@@ -17,18 +17,15 @@
             if (GetType() != compareTo.GetType())
                 return false;
 
-            if (Id == 0 || compareTo.Id == 0)
-                return false;
-
             return Id == compareTo.Id;
         }
 
         public static bool operator ==(Entity a, Entity b)
         {
-            if (ReferenceEquals(a, null) && ReferenceEquals(b, null))
+            if (a is null && b is null)
                 return true;
 
-            if (ReferenceEquals(a, null) || ReferenceEquals(b, null))
+            if (a is null || b is null)
                 return false;
 
             return a.Equals(b);
